@@ -40,8 +40,8 @@ public class MedianSortedArrryUsingBinarySearch {
             int left1 = cut1==0?Integer.MIN_VALUE:arr1[cut1-1];
             int left2 = cut2==0?Integer.MIN_VALUE:arr2[cut2-1];
 
-            int right1 = cut1==length1?Integer.MAX_VALUE:arr1[cut1];
-            int right2 = length2==0?Integer.MAX_VALUE:arr2[cut2];
+            int right1 = cut1 == length1 ?Integer.MAX_VALUE:arr1[cut1];
+            int right2 = cut2 == length2 ?Integer.MAX_VALUE:arr2[cut2];
 
             if(left1 <= right2 && left2 <= right1){
                 if((length1+length2)%2 == 0){
