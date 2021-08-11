@@ -1,4 +1,4 @@
-package com.goldmansachs.binarysearchtree;
+package com.goldmansachs.low.binarysearchtree;
 
 public class BinarySearchTreeImpl {
 
