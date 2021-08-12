@@ -2,27 +2,25 @@ package com.goldmansachs.medium.medianofsortedarray;
 
 public class MedianSortedArrryUsingBinarySearch {
 
-    public static int findMedianOfSortedArray(int[] arr){
-
-        if(arr.length % 2 ==0){
-            int mid = ((arr.length-1) / 2);
-            return arr[mid];
+    public static double findMedianOfSortedArray(int[] arr){
+        int mid = ((arr.length-1) / 2);
+        if(arr.length % 2 == 0){
+            return Double.valueOf(arr[mid] + arr[mid+1])/2;
         }else{
-            int mid = ((arr.length-1) / 2);
-            return (arr[mid]+ arr[mid+1] )/2;
+            return arr[mid];
         }
 
     }
 
-    public static int findMedianOfSortedArray(int[] arr1,int[] arr2){
+    public static double findMedianOfSortedArray(int[] arr1,int[] arr2){
         if(arr1.length<=0 && arr2.length<=0){
             return -1;
         }
-        if(arr1.length<0){
+        if(arr1.length<1){
            return  findMedianOfSortedArray(arr2);
         }
 
-        if(arr2.length<0){
+        if(arr2.length<1){
             return  findMedianOfSortedArray(arr1);
         }
 
@@ -61,9 +59,10 @@ public class MedianSortedArrryUsingBinarySearch {
 
     public static void main(String[] args) {
 
-        int[] arr1 = new int[]{};
+        int[] arr1 = new int[]{1,2};
         int[] arr2 = new int[]{};
-        if(findMedianOfSortedArray(arr1,arr2) == -1){
+        System.out.println(findMedianOfSortedArray(arr1,arr2));
+        if(findMedianOfSortedArray(arr1,arr2) == 1.5){
             System.out.print("Test Passed");
         }else{
             System.out.print("Test Failed");
