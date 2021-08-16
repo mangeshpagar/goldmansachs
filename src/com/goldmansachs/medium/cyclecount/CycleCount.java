@@ -2,23 +2,37 @@ package com.goldmansachs.medium.cyclecount;
 
 public class CycleCount {
 
-    public  static  int getCycleCount(int arr[],int startIndex){
 
-        if(arr == null || arr.length<1){
-            return -1;
-        }
-        int count = 0;
-        int slow = arr[startIndex];
-        int fast = arr[slow];
-        while(fast!= slow){
-            if(fast >= arr.length){
+    public static int countCycleLength( int[] arr, int startIndex ) {
+        int slow = 0;
+        int fast = 0;
+        int count=1;
+        while(true) {
+            count++;
+            if(slow < 0 || fast < 0 || slow > arr.length-1 || fast > arr.length-1){
                 return -1;
             }
-            count++;
-            slow = arr[slow];
-            fast = arr[arr[fast]];
+            fast=arr[fast];
+            if (slow==fast){
+                return count;
+            }
+
+            if(fast<0 || fast >= arr.length){
+                return -1;
+            }
+
+            fast=arr[fast];
+            if(slow== fast){
+                return count;
+            }
+            slow= arr[slow];
+
+            if(slow==fast){
+                return count;
+            }
+
+
         }
-        return count+1;
     }
 
     public static void main(String[] args) {
@@ -26,8 +40,11 @@ public class CycleCount {
 
         boolean testsPassed = true;
 
-        testsPassed &= getCycleCount(new int[]{1, 0}, 0) == 2;
-        testsPassed &= getCycleCount(new int[]{1, 2, 0}, 0) == 3;
+        testsPassed &= countCycleLength(new int[]{1, 0}, 0) == 2;
+        testsPassed &= countCycleLength(new int[]{1, 2,0}, 0) == 3;
+        testsPassed &= countCycleLength(new int[]{1, 2, 3,1}, 0) == 3;
+        testsPassed &= countCycleLength(new int[]{1, 2, 8}, 0) == -1;
+        testsPassed &= countCycleLength(new int[]{1, 2, 3,8}, 0) == -1;
 
         if(testsPassed) {
             System.out.println( "Test passed." );
