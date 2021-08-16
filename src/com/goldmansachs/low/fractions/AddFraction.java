@@ -4,16 +4,22 @@ public class AddFraction {
 
     public static int[] addFraction(int[] arr1,int arr2[]){
         int numerator1 = arr1[0];
-        int numerator2 = arr2[0];
         int denominator1 = arr1[1];
+
+        int numerator2 = arr2[0];
         int denominator2 = arr2[1];
-        int lcm  = lcm(denominator1,denominator1);
-        int fraction =((lcm/denominator1)*numerator1) +((lcm/denominator2)*numerator2);
 
-        lcm= lcm/gcd(lcm,fraction);
-        fraction= fraction/gcd(lcm,fraction);
 
-        return  new int[]{fraction,lcm};
+        int denominator3  = lcm(denominator1,denominator2);
+        int numerator3 =((denominator3/denominator1) * numerator1 ) +((denominator3/denominator2) *numerator2);
+
+        int commonFactor = gcd(denominator3,numerator3);
+        System.out.printf("GCD(%d, %d) is %d",denominator3,numerator3,commonFactor);
+        denominator3= denominator3/commonFactor;
+        numerator3= numerator3/commonFactor;
+        System.out.println();
+        System.out.println(numerator3+"/"+denominator3);
+        return  new int[]{numerator3,denominator3};
     }
 
     /*
