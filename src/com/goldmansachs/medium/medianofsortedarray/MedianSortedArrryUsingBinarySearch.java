@@ -63,9 +63,29 @@ public class MedianSortedArrryUsingBinarySearch {
         int[] arr2 = new int[]{};
         System.out.println(findMedianOfSortedArray(arr1,arr2));
         if(findMedianOfSortedArray(arr1,arr2) == 1.5){
-            System.out.print("Test Passed");
+            System.out.println("Test Passed");
         }else{
-            System.out.print("Test Failed");
+            System.out.println("Test Failed");
+        }
+
+
+
+        int[] arr3 = new int[]{-12, -10, -6, -5 , -3};
+        int[] arr4 = new int[]{3, 4, 6, 10, 12, 15};
+        System.out.println(findMedianOfSortedArray(arr3,arr4));
+        if(findMedianOfSortedArray(arr3,arr4) == 3){
+            System.out.println("Test Passed");
+        }else{
+            System.out.println("Test Failed");
+        }
+
+        int[] arr5 = new int[]{1,3,7,9};//1 2 3 3 5 7 8 9
+        int[] arr6 = new int[]{2,3,5,8};
+        System.out.println(findMedianOfSortedArray(arr5,arr6));
+        if(findMedianOfSortedArray(arr5,arr6) == 4){
+            System.out.println("Test Passed");
+        }else{
+            System.out.println("Test Failed");
         }
     }
 }

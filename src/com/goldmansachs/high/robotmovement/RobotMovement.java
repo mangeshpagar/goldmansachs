@@ -10,7 +10,7 @@ public class RobotMovement {
             return new int[]{0,0};
         }
         int x=0,y=0;
-        for (char c:input.toCharArray()) {
+        for (char c:input.toUpperCase().toCharArray()) {
             switch (c) {
                 case 'U' :y++;break;
                 case 'D' :y--;break;
@@ -32,6 +32,12 @@ public class RobotMovement {
 
         {
             String test = "UUU";
+            int[] result = getPostion(test);
+            res &= isEqual(result, new int[]{0, 3});
+        }
+
+        {
+            String test = "uuu";
             int[] result = getPostion(test);
             res &= isEqual(result, new int[]{0, 3});
         }
