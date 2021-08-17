@@ -50,6 +50,14 @@ public class AddFraction {
         int[] result = addFraction( new int[]{ 2, 3 }, new int[]{ 1, 2 } );
 
         if( result[ 0 ] == 7 && result[ 1 ] == 6) {
+           System.out.println( "Test passed." );
+        } else {
+            System.out.println( "Test failed." );
+        }
+
+        int[] result1 = addFraction( new int[]{ 1, 3 }, new int[]{ 3, -9 } );
+
+        if( result1[ 0 ] == 0 && result1[ 1 ] == 1) {
             System.out.println( "Test passed." );
         } else {
             System.out.println( "Test failed." );

@@ -1,4 +1,4 @@
-package com.goldmansachs.robotmovement;
+package com.goldmansachs.high.robotmovement;
 
 import java.util.Arrays;
 
