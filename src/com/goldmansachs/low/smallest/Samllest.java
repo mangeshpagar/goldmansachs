@@ -44,7 +44,7 @@ public class Samllest {
         result= result &&  findSmallest(new int[]{8,9,2,3,4,5,6}) == 2;
         result= result &&  findSmallest(new int[]{2,1}) == 1;
         result= result &&  findSmallest(new int[]{3,1,2}) == 1;
-        result= result &&  findSmallest(new int[]{-2,-3,1,2,3,5,7,9}) == -2;
+        result= result &&  findSmallest(new int[]{-3,-2,1,2,3,5,7,9}) == -3;
         result= result &&  findSmallest(new int[]{1,2,3,5,7,9,-2,-3}) == -3;
 
         if(result)

@@ -5,7 +5,7 @@ public class SecondSmallest {
 
     public static int findSecondSmallest(int[] arr){
 
-        if(arr.length<1){
+        if(null == arr || arr.length<1){
             return -1;
         }
         if(arr.length<2){
@@ -34,11 +34,17 @@ public class SecondSmallest {
 
     public static void main(String[] args) {
 
-        boolean result = true;
-        result = result && findSecondSmallest(new int[]{3,4,5,6,1,2}) == 2;
-        result = result && findSecondSmallest(new int[]{2,1}) == 2;
-        result = result && findSecondSmallest(new int[]{1}) == 1;
 
+        boolean result  = true;
+        result= result &&  findSecondSmallest(new int[]{}) == -1;
+        result= result &&  findSecondSmallest(null) == -1;
+        result= result &&  findSecondSmallest(new int[]{1,2,3,4,5,6}) == 2;
+        result= result &&  findSecondSmallest(new int[]{8,9,10,11,12,1,2,3,4,5,6}) == 2;
+        result= result &&  findSecondSmallest(new int[]{8,9,2,3,4,5,6}) == 3;
+        result= result &&  findSecondSmallest(new int[]{2,1}) == 2;
+        result= result &&  findSecondSmallest(new int[]{3,1,2}) == 2;
+        result= result &&  findSecondSmallest(new int[]{-2,-3,1,2,3,5,7,9}) == -2;
+        result= result &&  findSecondSmallest(new int[]{1,2,3,5,7,9,-2,-3}) == -2;
         if(result)
         {
             System.out.println("All tests pass");
