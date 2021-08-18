@@ -16,9 +16,9 @@ public class LongestUniformString {
         int startIndex=0;
         int length = 1;
         int longestStartIndex =0;
-        int longestCount =1;
+        int longestCount =0;
 
-        for (int i =1; i<input.length()-1;i++) {
+        for (int i =1; i<input.length();i++) {
 
             if (input.charAt(i) == input.charAt(i - 1)) {
                 length++;
@@ -41,10 +41,15 @@ public class LongestUniformString {
 
 
     public static void main(String[] args) {
+        testCases.put("",new int[]{-1,0});
+        testCases.put(null,new int[]{-1,0});
+        testCases.put(" ",new int[]{-1,0});
+        testCases.put("a",new int[]{0,1});
+        testCases.put("aaaa",new int[]{0,4});
+        testCases.put("aaaabbbbbcccddf",new int[]{4,5});
+        testCases.put("aabcccddfffffff",new int[]{8,7});
+        testCases.put("aaaabcdhhf",new int[]{0,4});
 
-        testCases.put("", new int[]{-1, 0});
-        testCases.put("10000111", new int[]{1, 4});
-        testCases.put("aabbbbbCdAA", new int[]{2, 5});
 
         boolean pass = true;
         for(Map.Entry<String,int[]> testCase : testCases.entrySet()){
