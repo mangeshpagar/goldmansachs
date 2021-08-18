@@ -6,6 +6,12 @@ public class WordDistance {
 
     public  static double shortestDistance(String document,String firstWord,String secondWord){
 
+        if(document== null || document.isEmpty() || firstWord == null || firstWord.isEmpty()
+                || secondWord == null || secondWord.isEmpty()){
+
+            return -1;
+        }
+
         int startIndex =0;
         int endIndex=0;
         boolean firstWordFound= false;
@@ -30,17 +36,17 @@ public class WordDistance {
                     }
                 }
         }
+        if(firstWordFound && secondWordWordFound){
+            int firstWordMin= firstWord.length()/2;
+            int secondWordMin= secondWord.length()/2;
+            System.out.println(startIndex+" "+endIndex );
 
-        int firstWordMin= firstWord.length()/2;
-        int secondWordMin= secondWord.length()/2;
-        System.out.println(startIndex+" "+endIndex );
-        if(startIndex>endIndex){
-            return -1;
+            String subString = document.substring(startIndex+firstWordMin,endIndex+secondWordMin);
+            System.out.println(subString+" "+subString.length());
+            double length  = subString.length();
+             return length;
         }
-        String subString = document.substring(startIndex+firstWordMin,endIndex+secondWordMin);
-        System.out.println(subString+" "+subString.length());
-        double length  = subString.length();
-    return length;
+        return -1;
 
     }
 
@@ -48,7 +54,8 @@ public class WordDistance {
     public static boolean pass() {
         return shortestDistance(document, "and", "graphic") == 6d && shortestDistance(document, "transfer", "it") == 14d
                 && shortestDistance(document, "Design", "filler") == 25d    && shortestDistance(document, "text", "graphic") == 39d
-                && shortestDistance(document, "new", "test") == 5d;
+                && shortestDistance(document, "new", "test") == 5d
+                && shortestDistance(document, "earlier", "was") == 15d;
 
     }
 
