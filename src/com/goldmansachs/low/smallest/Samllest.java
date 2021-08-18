@@ -4,16 +4,16 @@ public class Samllest {
 
     public  static int findSmallest(int[] arr){
 
-        if(arr.length <=0){
+        if(null == arr || arr.length <=0){
             return  -1;
         }
         if(arr.length <= 1){
             return  arr[0];
         }
-        int start =0;
+        int start = 0;
         int end= arr.length-1;
          while (start<=end){
-             if(arr[start] < arr[end]){
+             if(arr[start] <= arr[end]){
                  return  arr[start];
              }
             int mid = start + ((end-start)/2);
@@ -36,10 +36,16 @@ public class Samllest {
 
 
     public static void main(String[] args) {
-        boolean result = true;
-        result = result && findSmallest(new int[]{3,4,5,6,1,2}) == 1;
-        result = result && findSmallest(new int[]{2,1}) == 1;
-        result = result && findSmallest(new int[]{1}) == 1;
+        boolean result  = true;
+        result= result &&  findSmallest(new int[]{}) == -1;
+        result= result &&  findSmallest(null) == -1;
+        result= result &&  findSmallest(new int[]{1,2,3,4,5,6}) == 1;
+        result= result &&  findSmallest(new int[]{8,9,10,11,12,1,2,3,4,5,6}) == 1;
+        result= result &&  findSmallest(new int[]{8,9,2,3,4,5,6}) == 2;
+        result= result &&  findSmallest(new int[]{2,1}) == 1;
+        result= result &&  findSmallest(new int[]{3,1,2}) == 1;
+        result= result &&  findSmallest(new int[]{-2,-3,1,2,3,5,7,9}) == -2;
+        result= result &&  findSmallest(new int[]{1,2,3,5,7,9,-2,-3}) == -3;
 
         if(result)
         {
