@@ -18,13 +18,20 @@ public class Atoi {
         }
 
         while(i<input.length()){
-            int inputchar = input.charAt(i);
-            int zero = '0';
+            /*int zero = '0';
             System.out.println(inputchar);
             System.out.println(zero);
-            System.out.println(inputchar-zero);
-            result =  result*10 + input.charAt(i)-'0';
-            i++;
+            System.out.println(inputchar-zero);*/
+
+            int diff = input.charAt(i)-'0';
+            if(diff >= 0  && diff<=9) {
+                result = result * 10 + input.charAt(i) - '0';
+                i++;
+            }else {
+                return -1;
+            }
+
+
         }
         return result*sign;
     }
@@ -33,6 +40,7 @@ public class Atoi {
 
         boolean result = true;
         result =  result && 41 == atoi("41");
+        result =  result && -1 == atoi("4A1");
         if(result)
                 System.out.println("Passed");
         else
