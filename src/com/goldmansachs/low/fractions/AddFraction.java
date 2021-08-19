@@ -7,6 +7,14 @@ public class AddFraction {
         * if numerator = 0
         * */
     public static int[] addFraction(int[] arr1,int arr2[]){
+        if(arr1 == null || arr1.length<2 || arr2 == null || arr2.length<2){
+            return new int[]{-1,-1};
+        }
+
+        if(arr1[1] ==0 || arr2[1] ==0){
+            return new int[]{-1,-1};
+        }
+
         int numerator1 = arr1[0];
         int denominator1 = arr1[1];
 
@@ -61,6 +69,30 @@ public class AddFraction {
         int[] result1 = addFraction( new int[]{ 1, 3 }, new int[]{ 3, -9 } );
 
         if( result1[ 0 ] == 0 && result1[ 1 ] == 1) {
+            System.out.println( "Test passed." );
+        } else {
+            System.out.println( "Test failed." );
+        }
+
+        int[] result2 = addFraction( new int[]{ 0, 2 }, new int[]{ 1, 2 } );
+
+        if( result2[ 0 ] == 1 && result2[ 1 ] == 2) {
+            System.out.println( "Test passed." );
+        } else {
+            System.out.println( "Test failed." );
+        }
+
+        int[] result3 = addFraction( new int[]{ 2, 0 }, new int[]{ 1, 2 } );
+
+        if( result3[ 0 ] == -1 && result3[ 1 ] == -1) {
+            System.out.println( "Test passed." );
+        } else {
+            System.out.println( "Test failed." );
+        }
+
+        int[] result4 = addFraction( new int[]{ 2, 0 }, new int[]{ 1, 2 } );
+
+        if( result4[ 0 ] == -1 && result4[ 1 ] == -1) {
             System.out.println( "Test passed." );
         } else {
             System.out.println( "Test failed." );

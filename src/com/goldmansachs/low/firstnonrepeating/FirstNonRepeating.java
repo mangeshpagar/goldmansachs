@@ -1,7 +1,9 @@
 package com.goldmansachs.low.firstnonrepeating;
 
 import java.util.ArrayList;
+import java.util.LinkedHashMap;
 import java.util.List;
+import java.util.Map;
 
 public class FirstNonRepeating {
     /*
@@ -24,6 +26,15 @@ public class FirstNonRepeating {
     }
 
 
+    public static char firstNonRepeatingCharOptimized(String input){
+        Map<Character,Integer> map= new LinkedHashMap<>();
+        for(char c: input.toCharArray()){
+            map.put(c,map.containsKey(c)? map.get(c)+1:1);
+        }
+        return map.entrySet().stream().filter(entry-> entry.getValue() ==1).findFirst().get().getKey();
+
+    }
+
     public static void main(String[] args) {
 
 
@@ -33,7 +44,7 @@ public class FirstNonRepeating {
         boolean result = true;
         for(int i = 0; i < inputs.length; i++ )
         {
-            result = result && firstNonRepeatingChar(inputs[i]) == outputs[i];
+            result = result && firstNonRepeatingCharOptimized(inputs[i]) == outputs[i];
             if(!result)
                 System.out.println("Test failed for: " + inputs[i]);
             else

@@ -19,7 +19,7 @@ public class CycleCount {
                 return count;
             }
 
-            if(fast<0 || fast >= arr.length){
+            if(fast<0 || fast > arr.length-1){
                 return -1;
             }
 
