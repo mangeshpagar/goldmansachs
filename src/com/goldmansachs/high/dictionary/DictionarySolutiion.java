@@ -49,7 +49,7 @@ public class DictionarySolutiion {
 
     public static Set<String> maxlengthWord(Set<String> longestWord){
         TreeSet<String> list = new TreeSet<>(longestWord);
-        int maxlen =list.first().length();
+        int maxlen = list.last().length();
         return  longestWord.stream().filter(word-> word.length() == maxlen).collect(Collectors.toSet());
     }
 
