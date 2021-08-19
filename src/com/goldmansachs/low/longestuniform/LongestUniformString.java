@@ -7,7 +7,9 @@ import java.util.Map;
 public class LongestUniformString {
 
     private static final Map<String, int[]> testCases = new HashMap<>();
-
+    /*
+    * fine
+    * */
     public static int[] getLongestUniformString(String input){
 
         if(null == input || input.trim().isEmpty()){

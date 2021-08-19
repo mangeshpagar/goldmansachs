@@ -5,7 +5,8 @@ import java.util.ArrayList;
 public class Power {
 
 
-    /* Given base and integer exponent, compute value of base raised to the power of exponent.
+    /* fine
+    Given base and integer exponent, compute value of base raised to the power of exponent.
      * Can you implement a solution faster than O(exp)?
      */
     public static double power(double base, int exp) {

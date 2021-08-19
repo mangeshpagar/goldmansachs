@@ -11,9 +11,14 @@ public class RepeatedNumberInFractionAfterDecimal {
      * be represented as 0.(3) 6/11=0.54545454, this should be represented as 0.(54)
      * fractionRepresentation(1,2)=0.5 fractionRepresentation(1,3)=0.(3)
      * fractionRepresentation(6,11)=0.(54)
+     *
+     *
+     * not like 0/0 handle this case
+     * deno as 0;
+     * num as 0;
      */
     public static String fractionRepresentation(int num, int den) {
-        StringBuilder ans= new StringBuilder();
+        StringBuilder ans = new StringBuilder();
         int q = num/den;
         int r = num%den;
         ans.append(q);

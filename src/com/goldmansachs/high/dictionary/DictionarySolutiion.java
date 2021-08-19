@@ -4,6 +4,8 @@ package com.goldmansachs.high.dictionary;
 import java.util.*;
 import java.util.stream.Collectors;
 
+
+
 class Dictionary {
     private String[] entries;
 
@@ -55,10 +57,18 @@ public class DictionarySolutiion {
 
     public static boolean pass() {
         Dictionary dict = new Dictionary(new String[]{"to", "toe", "toes", "doe", "dog", "god", "dogs", "banana"});
-        boolean r = new HashSet<String>(Arrays.asList("toe")).equals(longestWord("toe", dict));
+        boolean r = true;
+        r= r && new HashSet<String>(Arrays.asList("toe")).equals(longestWord("toe", dict));
+        Dictionary dict1 = new Dictionary(new String[]{"to", "toe", "toes", "doe", "dog", "god", "dogs", "banana"});
+
+        r= r && new HashSet<String>(Arrays.asList("toe")).equals(longestWord("oetdo", dict));
+
         return r;
     }
 
+    /*
+    * find the new solution
+    * */
     public static void main(String[] args) {
         if(pass()) {
             System.out.println("Pass");

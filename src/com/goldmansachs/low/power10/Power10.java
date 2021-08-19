@@ -1,7 +1,10 @@
 package com.goldmansachs.low.power10;
 
 public class Power10 {
-
+    /*
+    * check for 0 and negative
+    * fine
+    * */
     public static boolean isPowerOf10(int i){
 
         while(i>1 && i%10 ==0){
@@ -13,8 +16,8 @@ public class Power10 {
 
     public static boolean doTestsPass()
     {
-        int[] isPowerList = {10};
-        int[] isNotPowerList = {3};
+        int[] isPowerList = {1,10};
+        int[] isNotPowerList = {0,-1};
 
         for(int i : isPowerList)
         {

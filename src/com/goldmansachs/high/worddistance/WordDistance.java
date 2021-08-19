@@ -4,6 +4,8 @@ import java.util.Locale;
 
 public class WordDistance {
 
+
+
     public  static double shortestDistance(String document,String firstWord,String secondWord){
 
         if(document== null || document.isEmpty() || firstWord == null || firstWord.isEmpty()

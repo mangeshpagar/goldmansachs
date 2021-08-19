@@ -7,6 +7,9 @@ import java.util.Set;
 
 public class PrimeFactor {
 
+    /*
+    * fine
+    * */
     public static ArrayList<Integer> primeFactorization(int no){
         Set<Integer> primeFactor = new HashSet<>();
         if(no<=1){

@@ -2,6 +2,9 @@ package com.goldmansachs.medium.atoi;
 
 public class Atoi {
 
+    /*
+    * character should  be in 0-9 check in while
+    * */
     public static int atoi(String input){
 
         if(null == input || input.trim().isEmpty()){
@@ -15,7 +18,11 @@ public class Atoi {
         }
 
         while(i<input.length()){
-
+            int inputchar = input.charAt(i);
+            int zero = '0';
+            System.out.println(inputchar);
+            System.out.println(zero);
+            System.out.println(inputchar-zero);
             result =  result*10 + input.charAt(i)-'0';
             i++;
         }

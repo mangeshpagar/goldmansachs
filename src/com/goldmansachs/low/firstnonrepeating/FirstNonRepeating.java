@@ -4,7 +4,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class FirstNonRepeating {
-
+    /*
+    * use array [256]
+    * search for optimized solution  fromm geek for geeks
+    * */
     public  static  char firstNonRepeatingChar(String input){
 
         List<Character> chars= new ArrayList<>();

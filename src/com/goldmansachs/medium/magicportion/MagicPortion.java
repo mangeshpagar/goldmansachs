@@ -1,7 +1,9 @@
 package com.goldmansachs.medium.magicportion;
 
 public class MagicPortion {
-
+    /*
+    * handle null check
+    * */
     public  static  int magicPortion(String input){
     StringBuilder magicPortion =  new StringBuilder();
     magicPortion.append(input.charAt(0));

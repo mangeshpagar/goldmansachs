@@ -7,7 +7,10 @@ import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 public class ApacheLogs {
-
+/*
+*validate ip (using java 8/regex)
+* handled ,null test cases
+* */
     public  static String maxAccessedIp(String[] input){
         int maxFrequency = 0;
         String maxIpAddress ="";
@@ -28,7 +31,7 @@ public class ApacheLogs {
         String lines[] = new String[] {
                 "10.0.0.1 - log entry 1 11",
                 "10.0.0.1 - log entry 2 213",
-                "10.0.0.2 - log entry 133132" };
+                "10.0.0.2 - log entry 133132","abcd - xyz ","abcd - xyz ","abcd - xyz ","abcd - xyz " };
         boolean result = maxAccessedIp(lines).equals("10.0.0.1");
         if (result)
             System.out.println("Passed");

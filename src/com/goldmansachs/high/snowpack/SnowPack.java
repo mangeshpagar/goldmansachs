@@ -1,6 +1,10 @@
 package com.goldmansachs.high.snowpack;
 
 public class SnowPack {
+        /*
+        * fine
+        * */
+
 
     public static int computeSnowpack(int[] arr){
 

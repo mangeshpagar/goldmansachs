@@ -6,6 +6,13 @@ import java.util.*;
 
 public class Panagram {
     public static  final String ALPHABETS = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+
+    /*
+    * hangle null check
+    *
+    * google String.valueOf()  for complexity o(n2)
+    * if you use hashmap () use contiansKey() complexity o(1)
+    * */
     public  static String findMissing(String input){
 
         StringBuilder missingChars = new StringBuilder();

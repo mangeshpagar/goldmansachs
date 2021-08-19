@@ -5,6 +5,13 @@ import java.util.Map;
 
 public class BestAverage {
 
+    /*
+    * java 8 scope
+    * use compute
+    * can be done one for loop.
+    * if not find ping
+    * */
+
     public  static  double bestAvgGrade(String[][] input){
 
         HashMap<String,double[]> studentsMap = new HashMap<>();

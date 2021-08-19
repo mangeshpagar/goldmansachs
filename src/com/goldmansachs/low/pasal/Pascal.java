@@ -1,7 +1,10 @@
 package com.goldmansachs.low.pasal;
 
 public class Pascal {
-
+    /*
+    * column > row return -1;
+    *
+    * */
     public static int pascal(int col,int row){
         if(col==0) return 1;
         else if(col==row) return 1;

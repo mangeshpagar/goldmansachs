@@ -3,7 +3,11 @@ package com.goldmansachs.low.anagram;
 import java.util.*;
 
 public class Anagram {
-
+    /*
+    * use compute() method of map stream (pouplate map)
+    * good scope for java8
+    * reduce()
+    * */
     public static  String anagram(String input){
 
         HashMap<String, List<String>> anagramMap =  new LinkedHashMap<>();

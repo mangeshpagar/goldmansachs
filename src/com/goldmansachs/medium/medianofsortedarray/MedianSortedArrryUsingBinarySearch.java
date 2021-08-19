@@ -2,6 +2,11 @@ package com.goldmansachs.medium.medianofsortedarray;
 
 public class MedianSortedArrryUsingBinarySearch {
 
+    /*
+     * fine
+     * O(min of both length) (logn)
+     */
+
     public static double findMedianOfSortedArray(int[] arr){
         int mid = ((arr.length-1) / 2);
         if(arr.length % 2 == 0){
@@ -87,5 +92,16 @@ public class MedianSortedArrryUsingBinarySearch {
         }else{
             System.out.println("Test Failed");
         }
+
+
+        int[] arr7 = new int[]{2,2,2,2}; //1 2 3 3 5 7 8 9
+        int[] arr8 = new int[]{2,2,2};
+        System.out.println(findMedianOfSortedArray(arr5,arr6));
+        if(findMedianOfSortedArray(arr7,arr8) == 2){
+            System.out.println("Test Passed");
+        }else{
+            System.out.println("Test Failed");
+        }
+
     }
 }

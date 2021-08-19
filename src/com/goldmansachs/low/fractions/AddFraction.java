@@ -1,14 +1,17 @@
 package com.goldmansachs.low.fractions;
 
 public class AddFraction {
-
+        /*
+        * null check for empty array
+        * denom is 0 return -1
+        * if numerator = 0
+        * */
     public static int[] addFraction(int[] arr1,int arr2[]){
         int numerator1 = arr1[0];
         int denominator1 = arr1[1];
 
         int numerator2 = arr2[0];
         int denominator2 = arr2[1];
-
 
         int denominator3  = lcm(denominator1,denominator2);
         int numerator3 =((denominator3/denominator1) * numerator1 ) +((denominator3/denominator2) *numerator2);

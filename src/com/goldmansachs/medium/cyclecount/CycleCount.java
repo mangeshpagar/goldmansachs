@@ -2,7 +2,9 @@ package com.goldmansachs.medium.cyclecount;
 
 public class CycleCount {
 
-
+/*
+*   checkm for out of index.
+* */
     public static int countCycleLength( int[] arr, int startIndex ) {
         int slow = 0;
         int fast = 0;

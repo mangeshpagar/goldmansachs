@@ -6,21 +6,21 @@ import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
 public class Election {
-
+    /*
+    *
+    * */
     public  static int whoIsElected(int n,int k){
 
         List<Integer> students = IntStream.rangeClosed(1,n).boxed().collect(Collectors.toList());
-        if(students.size()==1){
+        if(students.size() == 1){
             return students.get(0);
         }
         int start =0;
-        while(students.size()>1){
+        while(students.size() > 1){
             start = (start+k-1) % students.size();
             students.remove(start);
         }
         return students.get(0);
-
-
     }
 
     /**
