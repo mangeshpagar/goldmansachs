@@ -33,6 +33,13 @@ public class SubArrayExceedingSum {
         result = result && subArrayExceedsSum( arr, 6 ) == 2;
         result = result && subArrayExceedsSum( arr, 12 ) == -1;
 
+        int[] arr1 = { 1, 5, 9, 2 };
+        result = result && subArrayExceedsSum( arr1, 12 ) == 2;
+
+        int[] arr2 = { -3, 5, 9, 2 };
+        result = result && subArrayExceedsSum( arr1, 12 ) == 2;
+
+
         if( result )
         {
             System.out.println("All tests pass\n");

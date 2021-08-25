@@ -3,7 +3,7 @@ package com.goldmansachs.low.dotproduct;
 public class DotProduct {
 
     public static int dotProduct(int[] arr1,int[] arr2){
-        if((arr1== null  &&  arr2 == null) || (arr1.length<1  &&  arr2.length<1 )  ){
+        if((arr1 == null  &&  arr2 == null) || (arr1.length<1  &&  arr2.length<1 )  ){
             return -1;
         }
 

@@ -48,7 +48,7 @@ public class MedianSortedArrryUsingBinarySearch {
 
             if(left1 <= right2 && left2 <= right1){
                 if((length1+length2)%2 == 0){
-                    return (Math.max(left1,left2) + Math.min(right1,right2)) /2;
+                    return (Double.valueOf(Math.max(left1,left2)) + Double.valueOf(Math.min(right1,right2))) /2;
                 }else{
                     return Math.max(left1,left2);
                 }
@@ -98,6 +98,16 @@ public class MedianSortedArrryUsingBinarySearch {
         int[] arr8 = new int[]{2,2,2};
         System.out.println(findMedianOfSortedArray(arr5,arr6));
         if(findMedianOfSortedArray(arr7,arr8) == 2){
+            System.out.println("Test Passed");
+        }else{
+            System.out.println("Test Failed");
+        }
+
+
+        int[] arr9 = new int[]{1,2,2,2,3}; //1 2 3 3 5 7 8 9
+        int[] arr10 = new int[]{4,5,6,7,8};
+        System.out.println(findMedianOfSortedArray(arr9,arr10));
+        if(findMedianOfSortedArray(arr9,arr10) == 3.5){
             System.out.println("Test Passed");
         }else{
             System.out.println("Test Failed");

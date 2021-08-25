@@ -14,7 +14,6 @@ public class OptimalPath {
             gridValue[row][col] = arr[row][col] + Math.max(optimalPathRecusive(arr,row,col-1,gridValue),optimalPathRecusive(arr,row+1,col,gridValue));
             return  gridValue[row][col];
         }
-
     }
 
     public static int optimalPath(Integer[][] grid){
@@ -31,6 +30,8 @@ public class OptimalPath {
         boolean result = true;
         result &= optimalPath(new Integer[][] { { 0, 0, 0, 0, 5 }, { 0, 1, 1, 1, 0 }, { 2, 0, 0, 0, 0 } }) == 10;
         result &= optimalPath(new Integer[][] { { 1,1,3 }, { 2, 2, 1 }, { 2, 3, 2 } }) == 11;
+        result &= optimalPath(new Integer[][] { { 1,1,3 } }) == 5;
+        result &= optimalPath(new Integer[][] {  }) == 0;
         return result;
     }
 
