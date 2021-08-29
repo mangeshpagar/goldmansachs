@@ -3,6 +3,12 @@ package com.goldmansachs.additional.pairsequaltosum;
 import java.util.HashMap;
 import java.util.Map;
 
+
+/*
+ * Find out the number of pair from given integer array whose sum is equal to a given number.
+ * ex1 input {1,5,7,1} sum=6 output = 2 (1+5 ==6 and 5+1 == 6)
+ * time complexity = O(n)
+ * */
 public class EfficientApproach {
 
    public static int  findNoOfPairWhoseSumEqualtoNo(int[] arr,int k){
