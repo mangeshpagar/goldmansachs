@@ -25,6 +25,9 @@ public class GoogleSearch {
     }
 
     public  static List<String> search(String searchString){
+        if(searchString == null || searchString.trim().isEmpty()){
+            return  new ArrayList<>();
+        }
         return datasource.
                 entrySet().
                 stream().
@@ -44,8 +47,12 @@ public class GoogleSearch {
         add("HLOE",25);
 
         boolean result= true;
-        System.out.println(search("H"));
+        System.out.println(search(null));
         result&= search("H").equals(Arrays.asList("HE","HELL","HEL","HLOE","HELLO"));
+        result&= search("HE").equals(Arrays.asList("HE","HELL","HEL","HELLO"));
+        result&= search("HEL").equals(Arrays.asList("HELL","HEL","HELLO"));
+        result&= search("HL").equals(Arrays.asList("HLOE"));
+        result&= search(null).equals(new ArrayList<>());
 
         if(result){
             System.out.println("Passed");
