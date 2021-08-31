@@ -1,28 +1,32 @@
 package com.goldmansachs.low.firstnonrepeating;
 
-import java.util.ArrayList;
-import java.util.LinkedHashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
+import java.util.stream.Stream;
 
 public class FirstNonRepeating {
     /*
     * use array [256]
     * search for optimized solution  fromm geek for geeks
+    *
     * */
     public  static  char firstNonRepeatingChar(String input){
 
-        List<Character> chars= new ArrayList<>();
+        Map<Character,Integer> chars= new HashMap<>();
         for (int i = 0; i < input.length(); i++) {
-
-            if(chars.contains(Character.valueOf(input.charAt(i))))
+            if(chars.containsKey(input.charAt(i)))
             {
-                chars.remove(Character.valueOf(input.charAt(i)));
+                chars.put(input.charAt(i),chars.get(input.charAt(i)+1));
             }else{
-                chars.add(Character.valueOf(input.charAt(i)));
+                chars.put(input.charAt(i),1);
             }
         }
-       return  chars.get(0);
+        for (int i = 0; i < input.length(); i++) {
+            int freq = chars.get(input.charAt(i));
+            if(freq ==1){
+                return input.charAt(i);
+            }
+        }
+        return '1';
     }
 
 
@@ -31,15 +35,19 @@ public class FirstNonRepeating {
         for(char c: input.toCharArray()){
             map.put(c,map.containsKey(c)? map.get(c)+1:1);
         }
-        return map.entrySet().stream().filter(entry-> entry.getValue() ==1).findFirst().get().getKey();
-
+        Optional<Map.Entry<Character,Integer>> optional =   map.entrySet().stream().filter(entry-> entry.getValue() ==1).findFirst();
+        if(optional.isPresent()){
+            return optional.get().getKey();
+        }else{
+            return '0';
+        }
     }
 
     public static void main(String[] args) {
 
 
-        String[] inputs = {"apple","racecars", "ababdc"};
-        char[] outputs = {'a', 'e', 'd' };
+        String[] inputs = {"apple","racecars", "ababdc","aabbccddd"};
+        char[] outputs = {'a', 'e', 'd','0' };
 
         boolean result = true;
         for(int i = 0; i < inputs.length; i++ )
